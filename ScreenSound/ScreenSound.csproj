@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Banco\ArtistaDAL.Designer.cs" />
     <Compile Remove="Menus\MenuAvaliarAlbum.cs" />
   </ItemGroup>
 

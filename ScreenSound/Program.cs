@@ -26,9 +26,29 @@ public class Program
 
         try
         {
-            using var connection = new Connection().ObterConexao();
-            connection.Open();
-            Console.WriteLine(connection.State);
+            var artistaDAL = new ArtistaDAL();
+
+            //artistaDAL.Adicionar(new Artista("Foo Fighters", "Foo Fighters is a American Band Rock Roll"));
+
+            var listaArtistas = artistaDAL.Listar();
+
+            Artista artista = listaArtistas.Where(artista => artista.Id.Equals(2)).FirstOrDefault();
+
+            Console.WriteLine(artista);
+
+            //artistaDAL.Deletar(artista);
+
+            artista.Nome = "Foo Fighters 2.0";
+
+            artistaDAL.Atualizar(artista);
+
+            listaArtistas = artistaDAL.Listar();
+
+            foreach (var artist in listaArtistas)
+            {
+                Console.WriteLine(artist);
+            }
+
         }
         catch (Exception ex)
         {
