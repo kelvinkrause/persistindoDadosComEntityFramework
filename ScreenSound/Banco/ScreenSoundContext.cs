@@ -19,6 +19,7 @@ internal class ScreenSoundContext : DbContext
     }
 
     public DbSet<Artista> Artistas { get; set; } //Definido o nome da Tabela a ser manipulado
+    public DbSet<Musica> Musicas { get; set; }
 
 
 }
