@@ -24,7 +24,7 @@ public class Program
 
     void ExibirOpcoesDoMenu()
     {
-        var artistaDAL = new ArtistaDAL(new ScreenSoundContext());
+        var dal = new DAL<Artista>(new ScreenSoundContext());
 
         ExibirLogo();
         Console.WriteLine("\nDigite 1 para registrar um artista");
@@ -42,7 +42,7 @@ public class Program
             if (opcoes.ContainsKey(opcaoEscolhidaNumerica))
             {
                 Menu menuASerExibido = opcoes[opcaoEscolhidaNumerica];
-                menuASerExibido.Executar(artistaDAL);
+                menuASerExibido.Executar(dal);
                 if (opcaoEscolhidaNumerica > 0) ExibirOpcoesDoMenu();
             }
             else
